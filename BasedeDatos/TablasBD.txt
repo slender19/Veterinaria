@@ -125,3 +125,6 @@ insert into PERMISOS(Idrol,NombreMenu) values(1,'menuMantenedor')
 insert into PERMISOS(Idrol,NombreMenu) values(2,'menuVentas')
 insert into PERMISOS(Idrol,NombreMenu) values(2,'MenuClientes')
 insert into PERMISOS(Idrol,NombreMenu) values(2,'MenuReportes')
+
+/* creacion de un usuario para poder iniciar sesion en el fmr de login(cambiar el idrol de ser necesario, dependeiendo del que se cree anterioemente) */
+insert into USUARIO(Documento, NombreUsuario, Correo, Clave, Idrol, Estado) values('101010','ADMIN', '@gmail.com', '123', 1, 1)

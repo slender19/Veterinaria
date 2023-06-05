@@ -103,6 +103,7 @@ namespace Presentacion
             }
         }
 
+        //evento para buscar usando el codigo//
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -129,6 +130,8 @@ namespace Presentacion
             
             
         }
+
+
 
         private void btnagregarproducto_Click(object sender, EventArgs e)
         {
@@ -167,6 +170,7 @@ namespace Presentacion
                 txtCodigo.Select();
             }
         }
+
 
         private void calcularTotal()
         {
@@ -221,6 +225,8 @@ namespace Presentacion
             }
         }
 
+
+        //VALIDACIONES//
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             //si es un numero lo que presiona el controlador no se activa//

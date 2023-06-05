@@ -144,6 +144,8 @@ namespace Presentacion
             txtDocumento.Select();
         }
 
+
+        //metodo para colocar una imagene en la primera colunma de la grilla//
         private void dgvUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -274,7 +276,7 @@ namespace Presentacion
 
 
         }
-
+        //
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBusqueda.Text = "";
@@ -285,6 +287,7 @@ namespace Presentacion
             }
         }
 
+        //validacio//
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))

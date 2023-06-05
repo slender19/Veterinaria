@@ -239,6 +239,7 @@ namespace Presentacion
         }
 
 
+        //funcion para exportar los datos de la grilla//
         void Exportar()
         {
             DataTable dt = new DataTable();
@@ -255,6 +256,7 @@ namespace Presentacion
             {
                 if (row.Visible)
                 {
+                    //comprabar datos de cabeceras visibles//
                     dt.Rows.Add(new object[]
                     {
                             row.Cells[2].Value.ToString(),
@@ -266,7 +268,7 @@ namespace Presentacion
             }
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.FileName = string.Format("ReporteServicio_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+            saveFile.FileName = string.Format("ReporteServicio_{0}.xlsx", DateTime.Now.ToString("ddMMyyyy"));
             saveFile.Filter = "Excel files | *.xslx";
 
             if (saveFile.ShowDialog() == DialogResult.OK)
@@ -286,6 +288,7 @@ namespace Presentacion
             }
         }
 
+        //validaciones//
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar))
