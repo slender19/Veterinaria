@@ -62,6 +62,23 @@ namespace Presentacion
             this.Show();
         }
 
-      
+
+        //evento que si se presiona enter en el textbox de contraseña de una vez ingrese sesion//
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                var usuario = srvUsuarios.MostrarUsuarios().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtContraseña.Text).FirstOrDefault();
+
+                if (usuario != null)
+                {
+                    frmopen(usuario);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
     }
 }

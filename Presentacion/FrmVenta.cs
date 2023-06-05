@@ -223,18 +223,21 @@ namespace Presentacion
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //si es un numero lo que presiona el controlador no se activa//
             if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
             }
             else
             {
+                //si no se ha escrito nada y se intenta poner un punto el controlador se activa(Handled) y no permita escribir//
                 if (txtPrecio.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
                 {
                     e.Handled = true;
                 }
                 else
                 {
+                    //si esta borrando o esta escribiendo un punto no al inicio el controlador no se activa//
                     if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
                     {
                         e.Handled = false;

@@ -103,3 +103,25 @@ Logo varbinary(max) null
 )
 go
 
+
+/*insertar uno por uno de darse cuenta que se funciona con un select a la tabla rol*/
+
+insert into ROL(Descripcion) values('ADMINISTRADOR') 
+insert into ROL(Descripcion) values('EMPLEADO')
+
+
+
+/*insertar uno por uno de darse cuenta que se funciona con un select a la tabla permisos*/
+/*el idrol tiene que ser igual a la de la tabla rol asegurarse de eso y cambiarlo si es el caso*/
+/*el idrol '1'(uno) hace referencia al rol administrador, asegurarse que tanto el idrol de ambas tablas sean iguales en ambas tablas*/
+/*el idrol '2'(dos) hace referencia al rol administrador, asegurarse que tanto el idrol de ambas tablas sean iguales en ambas tablas*/
+
+insert into PERMISOS(Idrol,NombreMenu) values(1,'menuUsuarios')
+insert into PERMISOS(Idrol,NombreMenu) values(1,'menuVentas')
+insert into PERMISOS(Idrol,NombreMenu) values(1,'MenuClientes')
+insert into PERMISOS(Idrol,NombreMenu) values(1,'MenuReportes')
+insert into PERMISOS(Idrol,NombreMenu) values(1,'menuMantenedor')
+
+insert into PERMISOS(Idrol,NombreMenu) values(2,'menuVentas')
+insert into PERMISOS(Idrol,NombreMenu) values(2,'MenuClientes')
+insert into PERMISOS(Idrol,NombreMenu) values(2,'MenuReportes')
